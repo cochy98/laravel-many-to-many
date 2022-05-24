@@ -24,6 +24,9 @@
               </div>
             </div>
             <div class="my-card-footer">
+              @foreach ($post->categories as $category)
+                <span class="badge rounded-pill me-2" style="background-color: {{$category->colour}}" >{{$category->name}}</span>
+              @endforeach
               <a href="{{ route('admin.posts.show', $post->id) }}">Leggi di piu...</a>
             </div>
           </div>

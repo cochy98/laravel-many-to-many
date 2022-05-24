@@ -12289,6 +12289,9 @@ div.show-page div.my-card div.my-card-header .title.h2 {
 div.show-page div.my-card div.my-card-header h5.author,
 div.show-page div.my-card div.my-card-header .author.h5 {
   font-style: italic;
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 div.show-page div.my-card img.my-card-img {
@@ -12296,6 +12299,7 @@ div.show-page div.my-card img.my-card-img {
   height: 600px;
   -o-object-fit: cover;
      object-fit: cover;
+  margin-top: 0.2rem;
 }
 
 div.show-page div.my-card div.my-card-text {

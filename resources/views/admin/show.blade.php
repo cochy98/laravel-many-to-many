@@ -10,6 +10,9 @@
         <div class="my-card-header">
           <h2 class="title">{{ ucfirst($post->title) }}</h2>
           <h5 class="author">{{ $post->author }}</h5>
+          @foreach ($post->categories as $category)
+            <span class="badge rounded-pill ms-2" style="background-color: {{$category->colour}}" >{{$category->name}}</span>
+          @endforeach
         </div>
         <img src="{{ $post->image_url }}" alt="Picture of {{ $post->title }}" class="my-card-img">
         <div class="my-card-text">

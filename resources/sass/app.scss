@@ -124,6 +124,9 @@ div.show-page {
 
       h5.author {
         font-style: italic;
+        margin: 0;
+        display: inline-block;
+        vertical-align: middle;
       }
     }
 
@@ -131,6 +134,7 @@ div.show-page {
       width: 450px;
       height: 600px;
       object-fit: cover;
+      margin-top: .2rem;
     }
 
     div.my-card-text {
