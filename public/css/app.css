@@ -12319,3 +12319,8 @@ div.my-sidebar {
   height: 100%;
 }
 
+div.wrapper-form {
+  max-width: 530px;
+  margin: 0 auto;
+}
+

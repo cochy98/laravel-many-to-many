@@ -10,6 +10,7 @@
         @auth
           <li><a href="{{ Route('admin.home') }}">{{ ucfirst(Auth::user()->name) }}</a></li>
           <li><a href="{{ Route('admin.posts.index') }}">Posts</a></li>
+          <li><a href="{{ Route('admin.posts.create') }}">Scrivi nuovo post</a></li>
           <li>
             <a href="{{ route('logout') }}"
                 onclick="event.preventDefault();
