@@ -7,26 +7,6 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-// & Regole di stile della guest home
-div.guest-home {
-  position: relative;
-  height: calc(100vh - 71px);
-
-  div.message {
-    width: 500px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-
-    a.btn {
-      color: white;
-      margin-top: 2rem;
-    }
-  }
-}
-
 // § Regole di stile per l'header
 header {
   background-color: #c49b70;
@@ -57,14 +37,29 @@ header {
   }
 }
 
-// ! Regole di stile per la index dei post per l'utente registrato
-div.admin-page {
+// ! Regole di stile per la index dei post per l'utente loggato e l'utente guest
+div.index-page {
   div.my-card {
+    position: relative;
     border: 1px solid #aeadad;
     border-radius: 0.3rem;
     padding: 1.5rem;
     height: 280px;
     margin-bottom: 1.3rem;
+
+    div.action-wrapper {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      i {
+        color: white;
+      }
+
+      form.delete-card {
+        display: inline;
+      }
+    }
 
     img.my-card-img {
       width: 350px;

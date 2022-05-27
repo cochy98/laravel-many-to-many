@@ -12178,25 +12178,6 @@ fieldset:disabled .btn {
   }
 }
 
-div.guest-home {
-  position: relative;
-  height: calc(100vh - 71px);
-}
-
-div.guest-home div.message {
-  width: 500px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-div.guest-home div.message a.btn {
-  color: white;
-  margin-top: 2rem;
-}
-
 header {
   background-color: #c49b70;
 }
@@ -12225,7 +12206,8 @@ header nav ul li {
   font-size: 1.1rem;
 }
 
-div.admin-page div.my-card {
+div.index-page div.my-card {
+  position: relative;
   border: 1px solid #aeadad;
   border-radius: 0.3rem;
   padding: 1.5rem;
@@ -12233,31 +12215,45 @@ div.admin-page div.my-card {
   margin-bottom: 1.3rem;
 }
 
-div.admin-page div.my-card img.my-card-img {
+div.index-page div.my-card div.action-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+div.index-page div.my-card div.action-wrapper i {
+  color: white;
+}
+
+div.index-page div.my-card div.action-wrapper form.delete-card {
+  display: inline;
+}
+
+div.index-page div.my-card img.my-card-img {
   width: 350px;
   -o-object-fit: cover;
      object-fit: cover;
   margin-right: 1.5rem;
 }
 
-div.admin-page div.my-card div.my-card-content {
+div.index-page div.my-card div.my-card-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-div.admin-page div.my-card div.my-card-content div.my-card-body div.my-card-header h2.title,
-div.admin-page div.my-card div.my-card-content div.my-card-body div.my-card-header .title.h2 {
+div.index-page div.my-card div.my-card-content div.my-card-body div.my-card-header h2.title,
+div.index-page div.my-card div.my-card-content div.my-card-body div.my-card-header .title.h2 {
   margin: 0;
 }
 
-div.admin-page div.my-card div.my-card-content div.my-card-body div.my-card-header h5.author,
-div.admin-page div.my-card div.my-card-content div.my-card-body div.my-card-header .author.h5 {
+div.index-page div.my-card div.my-card-content div.my-card-body div.my-card-header h5.author,
+div.index-page div.my-card div.my-card-content div.my-card-body div.my-card-header .author.h5 {
   font-style: italic;
   margin-bottom: 1rem;
 }
 
-div.admin-page div.my-card div.my-card-content div.my-card-body div.my-card-text {
+div.index-page div.my-card div.my-card-content div.my-card-body div.my-card-text {
   height: 75px;
   overflow-y: hidden;
   text-align: justify;

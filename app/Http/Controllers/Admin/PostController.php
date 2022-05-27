@@ -20,7 +20,7 @@ class PostController extends Controller
     {
         //$posts = Post::all();
         $categories = Category::all();
-        $posts = Post::orderBy('id', 'DESC')->paginate(5);
+        $posts = Post::where('author', Auth::user()->name)->orderBy('id', 'DESC')->paginate(5);
         return view('admin.index', compact('posts', 'categories'));
     }
 
@@ -76,9 +76,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        $categories = Category::all();
+        return view('admin.edit', ['post' => $post, 'categories' => $categories]);
     }
 
     /**
@@ -88,9 +89,19 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
-        //
+        $data = $request->all();
+        $post->title = $data['title'];
+        $post->author = Auth::user()->name;
+        $post->content = $data['content'];
+        $post->image_url = $data['image_url'];
+        $post->slug = Str::slug($data['title'], '-');
+        $post->save();
+
+        // Modifico la categoria al post selezionato
+        $post->categories()->sync($data['category_id']);
+        return redirect()->route('admin.posts.show', $post->id);
     }
 
     /**
@@ -99,8 +110,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect()->route('admin.posts.index');
     }
 }
